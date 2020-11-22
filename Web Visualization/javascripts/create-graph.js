@@ -15,29 +15,56 @@ function parseData(createGraph) {
 function createGraph(data){
 	var instance = [];
 	var bitcoin = ["Bitcoin"];
-	var Ethereum = ["Ethereum"]
-	// var Deque = require("collections/deque");
-	//var deque = new Deque(["Bitcoin-Deque"]);
-	//let deque = new Deque(["Bitcoin-Deque"]);
+	var ethereum = ["Ethereum"]
+	var xrp = ["XRP"]
+	var tether = ["Tether"]
+	var chainlink = ["Chainlink"]
+	var litecoin =["Litecoin"]
+	var bitcoin_Cash =["Bitcoin Cash"]
+	var polkadot =["Polkadot"]
+	var binance_Coin =["Binance Coin"]
+	var cardano = ["Cardano"]
+	var dow = ["DOW"]
+	var bitcoin_2 = ["Bitcoin-2"]
+	var bitcoin_3 = ["Bitcoin-3"]
 
 	for (var i = 1; i < data.length-1; i++) {
 		instance.push(data[i][1]);
 		bitcoin.push(data[i][2]);
-		Ethereum.push(data[i][3]);
-		//deque.addFront(data[i][2]);
+		ethereum.push(data[i][3]);
+		xrp.push(data[i][4]);
+		tether.push(data[i][5]);
+		chainlink.push(data[i][6]);
+		litecoin.push(data[i][7]);
+		bitcoin_Cash.push(data[i][8]);
+		polkadot.push(data[i][9]);
+		binance_Coin.push(data[i][10]);
+		cardano.push(data[i][11]);
+		dow.push(data[i][12]);
+		bitcoin_2.push(data[i][13]);
+		bitcoin_3.push(data[i][14]);
+	
 	} 
 
-	console.log(instance);
-	console.log(bitcoin);
-	console.log(Ethereum);
-	//console.log(deque);
 
 	var chart = c3.generate({
 		bindto: '#chart',
 	    data: {
 	        columns: [
 				bitcoin,
-				Ethereum
+				ethereum,
+				xrp,
+				tether,
+				chainlink,
+				litecoin,
+				bitcoin_Cash,
+				polkadot,
+				binance_Coin,
+				cardano,
+				dow,
+				bitcoin_2,
+				bitcoin_3
+
 	        ]
 	    },
 	    axis: {
@@ -68,38 +95,6 @@ function createGraph(data){
 
 }
 
-// class Deque {
-//     constructor() {
-//         this.front = this.back = undefined;
-//     }
-//     addFront(value) {
-//         if (!this.front) this.front = this.back = { value };
-//         else this.front = this.front.next = { value, prev: this.front };
-//     }
-//     removeFront() {
-//         let value = this.peekFront();
-//         if (this.front === this.back) this.front = this.back = undefined;
-//         else (this.front = this.front.prev).next = undefined;
-//         return value;
-//     }
-//     peekFront() { 
-//         return this.front && this.front.value;
-//     }
-//     addBack(value) {
-//         if (!this.front) this.front = this.back = { value };
-//         else this.back = this.back.prev = { value, next: this.back };
-//     }
-//     removeBack() {
-//         let value = this.peekBack();
-//         if (this.front === this.back) this.front = this.back = undefined;
-//         else (this.back = this.back.next).back = undefined;
-//         return value;
-//     }
-//     peekBack() { 
-//         return this.back && this.back.value;
-//     }
-// }
 
-// demo
 
 parseData(createGraph);
