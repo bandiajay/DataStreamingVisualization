@@ -15,7 +15,7 @@ function parseData(createGraph) {
 function createGraph(data){
 	var instance = [];
 	var bitcoin = ["Bitcoin"];
-	var Etherium = ["Ethereum"]
+	var Ethereum = ["Ethereum"]
 	// var Deque = require("collections/deque");
 	//var deque = new Deque(["Bitcoin-Deque"]);
 	//let deque = new Deque(["Bitcoin-Deque"]);
@@ -23,13 +23,13 @@ function createGraph(data){
 	for (var i = 1; i < data.length-1; i++) {
 		instance.push(data[i][1]);
 		bitcoin.push(data[i][2]);
-		Etherium.push(data[i][3]);
+		Ethereum.push(data[i][3]);
 		//deque.addFront(data[i][2]);
 	} 
 
 	console.log(instance);
 	console.log(bitcoin);
-	console.log(Etherium);
+	console.log(Ethereum);
 	//console.log(deque);
 
 	var chart = c3.generate({
@@ -37,7 +37,7 @@ function createGraph(data){
 	    data: {
 	        columns: [
 				bitcoin,
-				Etherium
+				Ethereum
 	        ]
 	    },
 	    axis: {
