@@ -10,8 +10,6 @@ function parseData(createGraph) {
 	});
 }
 
-
-
 function createGraph(data){
 	var instance = [];
 	var bitcoin = ["Bitcoin"];
@@ -25,8 +23,8 @@ function createGraph(data){
 	var binance_Coin =["Binance Coin"]
 	var cardano = ["Cardano"]
 	var dow = ["DOW"]
-	var bitcoin_2 = ["Bitcoin-2"]
-	var bitcoin_3 = ["Bitcoin-3"]
+	var wrapped_Bitcoin	= ["Wrapped Bitcoin"]
+	var usd_Coin = ["USD Coin"]
 
 	for (var i = 1; i < data.length-1; i++) {
 		instance.push(data[i][1]);
@@ -41,11 +39,10 @@ function createGraph(data){
 		binance_Coin.push(data[i][10]);
 		cardano.push(data[i][11]);
 		dow.push(data[i][12]);
-		bitcoin_2.push(data[i][13]);
-		bitcoin_3.push(data[i][14]);
+		wrapped_Bitcoin.push(data[i][13]);
+		usd_Coin.push(data[i][14]);
 	
 	} 
-
 
 	var chart = c3.generate({
 		bindto: '#chart',
@@ -62,8 +59,8 @@ function createGraph(data){
 				binance_Coin,
 				cardano,
 				dow,
-				bitcoin_2,
-				bitcoin_3
+				wrapped_Bitcoin,
+				usd_Coin
 
 	        ]
 	    },
@@ -94,7 +91,5 @@ function createGraph(data){
 	window.onload = timedRefresh(60000);
 
 }
-
-
 
 parseData(createGraph);
